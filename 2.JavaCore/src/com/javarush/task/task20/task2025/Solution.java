@@ -7,11 +7,19 @@ import java.util.List;
 Алгоритмы-числа
 */
 public class Solution {
+    public static void main(String[] args) throws InterruptedException {
+        long start = System.currentTimeMillis();
+        getNumbers(150000000);
+        long end = System.currentTimeMillis();
+        System.out.println(end - start + " millisecond");
+        System.out.println("memory: " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " mb");
+    }
+
     public static long[] getNumbers(long N) {
         long[] result = null;
         List<Long> longList = new ArrayList<>();
 
-        long[][] massiv = new long[10][String.valueOf(N).length()];
+        long[][] massiv = new long[10][lengthNumber(N)];
 
         for (int i = 0; i < massiv.length; i++)
             for (int j = 0; j < massiv[0].length; j++) {
@@ -21,9 +29,7 @@ public class Solution {
                 massiv[i][j] = tmp;
             }
 
-        long number = 1L;
-
-        while (number < N) {
+        for (long number = 1; number < N; number++) {
 
             long sum = 0;
 
@@ -54,8 +60,6 @@ public class Solution {
                 longList.add(number);
                 System.out.println(number);
             }
-
-            number++;
         }
 
         result = new long[longList.size()];
@@ -65,12 +69,12 @@ public class Solution {
         return result;
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        long start = System.currentTimeMillis();
-        getNumbers(Integer.MAX_VALUE);
-        long end = System.currentTimeMillis();
-        System.out.println(end - start + " millisecond");
-        System.out.println("memory: " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " mb");
-
+    public static byte lengthNumber(long N) {
+        byte length = 0;
+        while (N > 0) {
+            N /= 10;
+            length++;
+        }
+        return length;
     }
 }
