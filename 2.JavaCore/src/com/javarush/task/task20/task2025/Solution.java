@@ -22,8 +22,7 @@ public class Solution {
 
         int length = 0;
         long tmp = N;
-        while (tmp > 0)
-        {
+        while (tmp > 0) {
             tmp /= 10;
             length++;
         }
@@ -49,9 +48,10 @@ public class Solution {
         return result;
     }
 
-    public static void search(int digit, int unused, long pow) {
+    private static void search(int digit, int unused, long pow) {
         if (digit == 10) {
-            if (check(pow)) longList.add(pow);
+            if (check(pow))
+                longList.add(pow);
             return;
         }
 
@@ -66,7 +66,7 @@ public class Solution {
         }
     }
 
-    public static boolean check(long pow) {
+    private static boolean check(long pow) {
         if (Solution.N <= pow)
             return false;
 
@@ -79,7 +79,8 @@ public class Solution {
         }
 
         for (int i = 0; i < 10; i++) {
-            if (testMultiSet[i] != digitsMultiSet[i]) return false;
+            if (testMultiSet[i] != digitsMultiSet[i])
+                return false;
         }
 
         return true;
@@ -88,7 +89,7 @@ public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
-        System.out.println(Arrays.toString(getNumbers(Long.MAX_VALUE)));
+        System.out.println(Arrays.toString(getNumbers(Integer.MAX_VALUE)));
         long end = System.currentTimeMillis();
         System.out.println(end - start + " millisecond");
         System.out.println("memory: " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " mb");
