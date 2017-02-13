@@ -1,0 +1,8 @@
+<div class="wdghtml" taskKey="com.javarush.task.task30.task3001">
+<h3>Конвертер систем счислений</h3>
+<p>Реализуй логику метода <mark>convertNumberToOtherNumerationSystem</mark>, который должен переводить число <mark>number.getDigit()</mark>, из одной системы <strong>счисления </strong>(<strong>numerationSystem</strong>) в другую (<strong>expectedNumerationSystem</strong>).<br />
+Брось <strong>NumberFormatException</strong>, если переданное число некорректно, например, число &#171;<em><strong>120</strong></em>&#187; с системой счисления <strong><span class="text-user">2</span></strong>.<br />
+Валидация для &#8212; <mark>number.getDigit()</mark> &#8212; целое не отрицательное.<br />
+Метод <mark>main</mark> не участвует в тестировании.</p>
+
+</div>

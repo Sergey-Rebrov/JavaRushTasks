@@ -1,0 +1,5 @@
+<div class="wdghtml" taskKey="com.javarush.task.task30.task3002">
+<h3>Осваиваем методы класса Integer</h3>
+<p>Используя метод <mark>Integer.parseInt(<strong>String</strong>, <strong>int</strong>)</mark> реализуй логику метода <mark>convertToDecimalSystem</mark>, который должен переводить переданную строку в десятичное число и возвращать его в виде строки.</p>
+
+</div>
