@@ -21,6 +21,6 @@ public class Solution {
         else if (s.startsWith("0") && s.length() > 1)
             return String.valueOf(Integer.parseInt(s.substring(1), 8));
         else
-            return String.valueOf(Integer.parseInt(s, 10));
+            return s;
     }
 }

@@ -10,8 +10,13 @@ public class Solution {
     public static void main(String[] args) {
         //напишите тут ваш код
 
-        String string = args[0];
-        if (string.matches("^[a-zA-Z0-9]+$")) {
+        String string = null;
+        try {
+            string = args[0];
+        } catch (Exception ignore) {
+        }
+
+        if ( string != null && string.matches("^[a-zA-Z0-9]+$")) {
             for (int i = 2; i < 37; i++) {
                 try {
                     BigInteger bigInteger = new BigInteger(string, i);
