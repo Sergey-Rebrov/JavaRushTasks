@@ -22,13 +22,11 @@ public class Consumer implements Runnable
             Thread.sleep(450);
             while (true)
             {
-                System.out.format("Processing " + queue.take().toString());
-                System.out.println();
+                System.out.format("Processing %s\r\n", queue.take().toString());
             }
         }
         catch (InterruptedException ignore)
         {
         }
-
     }
 }

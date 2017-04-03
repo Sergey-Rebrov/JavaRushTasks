@@ -36,17 +36,18 @@ public class Server {
         }
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
-
-            while (true) {
+            while (true)
+            {
                 connection.send(new Message(MessageType.NAME_REQUEST));
                 Message answer = connection.receive();
-                if (answer.getType() == MessageType.USER_NAME) {
-                    if (answer.getData() != null && !answer.getData().isEmpty())
-                        if (!connectionMap.containsKey(answer.getData())) {
-                            connectionMap.put(answer.getData(), connection);
-                            connection.send(new Message(MessageType.NAME_ACCEPTED));
-                            return answer.getData();
-                        }
+                if (answer.getType() == MessageType.USER_NAME)
+                {
+                    if (!answer.getData().isEmpty() && !connectionMap.containsKey(answer.getData()))
+                    {
+                        connectionMap.put(answer.getData(), connection);
+                        connection.send(new Message(MessageType.NAME_ACCEPTED));
+                        return answer.getData();
+                    }
                 }
             }
         }

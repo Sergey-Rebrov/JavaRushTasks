@@ -14,13 +14,18 @@ public class Solution {
 
     public static String convertToDecimalSystem(String s) {
         //напишите тут ваш код
-        if (s.startsWith("0x"))
-            return String.valueOf(Integer.parseInt(s.substring(2), 16));
-        else if (s.startsWith("0b"))
-            return String.valueOf(Integer.parseInt(s.substring(2), 2));
-        else if (s.startsWith("0") && s.length() > 1)
-            return String.valueOf(Integer.parseInt(s.substring(1), 8));
+        if (s.startsWith("0x")) {
+            s = s.substring(2);
+            return String.valueOf(Integer.parseInt(s, 16));
+        }
+        else if (s.startsWith("0b")) {
+            s = s.substring(2);
+            return String.valueOf(Integer.parseInt(s, 2));
+        }
+        else if (s.startsWith("0") && s.length() > 1) {
+            return String.valueOf(Integer.parseInt(s, 8));
+        }
         else
-            return s;
+            return String.valueOf(Integer.parseInt(s, 10));
     }
 }

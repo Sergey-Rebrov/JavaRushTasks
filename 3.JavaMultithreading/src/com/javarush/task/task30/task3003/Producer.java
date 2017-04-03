@@ -22,15 +22,13 @@ public class Producer implements Runnable
             for (int i = 1; i <= 9; i++)
             {
                 ShareItem shareItem = new ShareItem("ShareItem-" + i, i);
-                System.out.format("Элемент ‘%s‘ добавлен", shareItem.getDescription());
-                System.out.println();
+                System.out.format("Элемент 'ShareItem-%d' добавлен\r\n", shareItem.getItemId());
                 queue.offer(shareItem);
 
                 Thread.sleep(100);
 
                 if (queue.hasWaitingConsumer()) {
-                    System.out.format("Consumer в ожидании!");
-                    System.out.println();
+                    System.out.format("Consumer в ожидании!\r\n");
                 }
             }
         }
